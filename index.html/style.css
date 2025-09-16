@@ -1,0 +1,156 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* التدرج الوردي */
+    background: linear-gradient(to bottom, #E6B3FF, #FFFFFF);
+    
+    /* التوسيط الكامل */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    gap: 30px; /* مساحة بين الصورة والزر */
+}
+
+/* ستايل الصورة - class="m" */
+.m {
+    /* خلفية بيضاء للصورة */
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    
+    /* حجم متجاوب */
+    width: min(300px, 80vw);
+    height: min(300px, 80vw);
+    object-fit: contain;
+    
+    /* تأثير عند التمرير */
+    transition: transform 0.3s ease;
+}
+
+.m:hover {
+    transform: scale(1.05);
+}
+
+/* ستايل الرابط - a */
+a {
+    /* إزالة ستايل الرابط الافتراضي */
+    text-decoration: none;
+    color: white;
+    
+    /* ستايل الزر */
+    background-color: #E066C7;
+    padding: 20px 60px;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    
+    /* حجم متجاوب */
+    width: min(300px, 80vw);
+    max-width: 400px;
+    
+    /* التوسيط */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* تأثيرات */
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(224, 102, 199, 0.3);
+}
+
+/* تأثيرات الزر */
+a:hover {
+    background-color: #D14BB8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(224, 102, 199, 0.4);
+    color: white; /* تأكد إن اللون يبقى أبيض */
+}
+
+a:active {
+    transform: translateY(0);
+}
+
+/* للجوالات الصغيرة */
+@media (max-width: 480px) {
+    body {
+        gap: 20px;
+    }
+    
+    .m {
+        padding: 20px;
+        width: min(250px, 85vw);
+        height: min(250px, 85vw);
+    }
+    
+    a {
+        font-size: 20px;
+        padding: 15px 40px;
+        width: min(280px, 85vw);
+    }
+}
+
+/* للشاشات الكبيرة */
+@media (min-width: 1200px) {
+    body {
+        gap: 40px;
+    }
+    
+    .m {
+        width: 350px;
+        height: 350px;
+        padding: 50px;
+    }
+    
+    a {
+        font-size: 28px;
+        padding: 25px 80px;
+        max-width: 450px;
+    }
+}
+
+/* إخفاء الـ div الفارغ */
+div {
+    display: none;
+}
+
+a:hover {
+    color: black;
+}
+/* نص "صنع من قبل" */
+.made-by {
+    color: rgba(189, 2, 214, 0.6);  /* أبيض شفاف */
+    font-size: 16px;
+    font-weight: 300;  /* خط رفيع */
+    text-align: center;
+    margin-top: 40px;  /* مساحة تحت الزر الوردي */
+    
+    /* تأثير جميل */
+    letter-spacing: 1px;  /* مسافة بين الحروف */
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند التمرير */
+.made-by:hover {
+    color: rgba(165, 20, 170, 0.425);  /* يصير أوضح */
+    transform: translateY(-2px);  /* يرتفع شوي */
+}
+
+/* للجوالات */
+@media (max-width: 480px) {
+    .made-by {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+}
